@@ -1,0 +1,11 @@
+﻿(function () {
+    if (localStorage.sfResources) {
+        var openSansUrl = "https://fonts.googleapis.com/css?family=Open+Sans:300,400,700";
+        var link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = openSansUrl;
+        document.head.appendChild(link);
+
+        document.documentElement.classList.add("wf-active");
+    }
+})();

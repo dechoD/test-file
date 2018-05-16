@@ -1,0 +1,33 @@
+﻿(function () {
+    // TODO: remove this when better solution is provided. Also the link in error.html and consent.html should be changed.
+    var url = "";
+    if (window.location.href.indexOf("OpenID/connect") !== -1) {
+        url = "../content/app/load-resources.js";
+    } else {
+        url = "content/app/load-resources.js";
+    }
+
+    if (!localStorage.sfResources) {
+        WebFont.load({
+            google: {
+                families: ["Open+Sans:300,400,700"]
+            },
+            active: function () {
+                localStorage.sfResources = true;
+
+                loadResources(url);
+            },
+            inactive: function () {
+                console.log("Failed to load fonts!");
+            }
+        });
+    } else {
+        loadResources(url);
+    }
+
+    function loadResources(url) {
+        var script = document.createElement("script");
+        script.src = url;
+        document.head.appendChild(script);
+    }
+}());

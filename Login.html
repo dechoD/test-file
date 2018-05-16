@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!-- saved from url=(0112)http://iristestsandbox.cloudapp.net/Sitefinity/Authenticate/OpenID/login?signin=30cf30068f94c2e66af1d6e15d5d0bcb -->
+<html ng-app="app" ng-controller="LayoutCtrl" class="wf-active ng-scope gr__iristestsandbox_cloudapp_net"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <title>Login</title>
+    <style>
+        img {
+            width: 100px;
+            height: 100px;
+        }
+        form {
+            margin: 0 auto;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            padding: 40px 50px;
+            width: 430px;
+            min-height: 430px;
+            background-color: #fff;
+        }
+    </style>
+    <link href="./Login_files/bootstrap.min.css" rel="stylesheet">
+<link href="./Login_files/authentication.css" rel="stylesheet">
+
+    <script src="./Login_files/webfont-loader-top.js.download"></script><link rel="stylesheet" href="./Login_files/css">
+<script src="./Login_files/load-resources.js.download"></script></head>
+<body data-gr-c-s-loaded="true">
+    <div class="sf-authentication-screen">
+        <h1 class="sf-logo"></h1>
+        <form name="form" method="post" action="http://iristestsandbox.cloudapp.net/Sitefinity/Authenticate/OpenID/login?signin=30cf30068f94c2e66af1d6e15d5d0bcb&amp;provider=Default" id="loginForm" class="sf-login-form -sf-content-centered -sf-center-text ng-dirty ng-valid-parse ng-valid ng-valid-required">
+            <input type="hidden" name="idsrv.xsrf" value="a-Bsab-sW0rWunIXnecAkakmtvfl8FSZFT8Ij3Fo8ekad2fgSxeTTSk0jfxIIkuab3oElXyvJlg_9Dchk6Hmxkvbcso" autocomplete="off" token="model.antiForgery" class="ng-isolate-scope">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAMAAABHPGVmAAAAflBMVEXc7PXd7PXd7fXe7fXe7fbf7vbh7/bh7/fi7/fj8Pfk8Pfl8fjm8fjm8vjn8vjo8vjo8/np8/nq9Pnr9Pns9frt9fru9vrv9vrw9/vx+Pvy+Pvz+fz0+fz1+vz2+vz2+v34+/35+/36/P76/f77/f78/f78/v79/v7+//////+lNPEBAAABIElEQVR4Ae3V2w6aUBSE4dkCYj2gICoHQVRQ5v1fsNpoI0gTa9e+aLK+F/iTuRkopZRSSimlPuP6vmu5EB95c4wtdpYNH5olLNnxxQ5WbNmxhQUBewKIcxv2NK7tsawMZi58czGQNeOAmf215PfKOSCHrJIDSsgqOKCArJQDUshac8AasnwO8CGs4psK0iK+iSDNnNhzMhA3Z88cFiTsSGCD2fPF3sAKk/G3zMCWsOEvTQiLRqvscMhWI/zHvAV6Fh5kTbOWqYMXTso2m0KME1W8q0ODBxPWvKsiBxL85MqnczzGzTg+8+ma+PhHJijZVRdFza4yMPiet6n5kXrj4TuTvOXH2nwi97h/ttaIRjRiKeL9+CselFJKKaWUUj0/AWGBopm+4+PNAAAAAElFTkSuQmCC" alt="Default profile photo">
+            <h2 class="ng-binding">Login to manage the site</h2>
+            <ul class="-sf-clearfix">
+                <li ng-show="model.showProviders" class="ng-hide">
+                    <label for="membershipProvider" class="ng-binding">Authentication Provider</label>
+                    <select id="membershipProvider" name="membershipProvider" ng-model="model.selectedProvider" ng-options="p.friendlyName for p in model.providers track by p.name" class="ng-pristine ng-untouched ng-valid ng-not-empty"><option label="Default" value="Default" selected="selected">Default</option></select>
+                </li>
+                <li>
+                    <input required="" name="username" autofocus="" id="username" type="text" class="sf-input ng-not-empty ng-dirty ng-valid-parse ng-valid ng-valid-required ng-touched" placeholder="Email or username" ng-model="model.username">
+                </li>
+                <li>
+                    <input required="" id="password" name="password" type="password" class="sf-input ng-not-empty ng-dirty ng-valid-parse ng-valid ng-valid-required ng-touched" placeholder="Password" ng-model="model.password" autocomplete="off">
+                </li>
+                <li class="sf-login-form__remember" ng-show="model.allowRememberMe">
+                    <input type="checkbox" id="rememberMe" name="rememberMe" ng-model="model.rememberMe" value="true" class="ng-pristine ng-untouched ng-valid ng-not-empty">
+                    <label for="rememberMe" class="ng-binding">Remember me</label>
+                </li>
+                <!--TODO: To be uncommented when backend forgot password is implemented
+                <li class="sf-login-form__forgot-passowrd">
+                    <a id="forgotPassowrd" href="#">{{model.resources["forgotYourPassword"]}}</a>
+                </li>-->
+            </ul>
+            <div class="-sf-txt-failure ng-binding ng-hide" ng-show="model.errorMessage">
+                
+            </div>
+            <button class="sf-button -sf-action ng-binding" id="loginButton" onclick="alert('Opaaa')">Login</button>
+            <div ng-show="model.externalProviders &amp;&amp; model.externalProviders.length &gt; 0" class="ng-hide">
+                <h2 class="ng-binding">or use your account in...</h2>
+                <ul class="sf-mt--20">
+                    <!-- ngRepeat: provider in model.externalProviders -->
+                </ul>
+            </div>
+        </form>
+    </div>
+    <script id="modelJson" type="application/json">
+        {&quot;providers&quot;:[{&quot;name&quot;:&quot;Default&quot;,&quot;title&quot;:&quot;Default&quot;,&quot;friendlyName&quot;:&quot;Default&quot;}],&quot;defaultMembershipProviderName&quot;:&quot;Default&quot;,&quot;externalProviders&quot;:[],&quot;resources&quot;:{&quot;rememberMe&quot;:&quot;Remember me&quot;,&quot;rememberMyChoice&quot;:&quot;Remember my choice&quot;,&quot;forgotYourPassword&quot;:&quot;Forgot your password?&quot;,&quot;emailOrUsername&quot;:&quot;Email or username&quot;,&quot;password&quot;:&quot;Password&quot;,&quot;provider&quot;:&quot;Authentication Provider&quot;,&quot;login&quot;:&quot;Login&quot;,&quot;loginHeader&quot;:&quot;Login to manage the site&quot;,&quot;useYorAccount&quot;:&quot;or use your account in...&quot;,&quot;requestForPermission&quot;:&quot;Request for permission&quot;,&quot;grandAccess&quot;:&quot;Grand access&quot;,&quot;grandAccessTo&quot;:&quot;Grand access to:&quot;,&quot;cancel&quot;:&quot;Cancel&quot;},&quot;loginUrl&quot;:&quot;/Sitefinity/Authenticate/OpenID/login?signin=30cf30068f94c2e66af1d6e15d5d0bcb&quot;,&quot;antiForgery&quot;:{&quot;name&quot;:&quot;idsrv.xsrf&quot;,&quot;value&quot;:&quot;a-Bsab-sW0rWunIXnecAkakmtvfl8FSZFT8Ij3Fo8ekad2fgSxeTTSk0jfxIIkuab3oElXyvJlg_9Dchk6Hmxkvbcso&quot;},&quot;allowRememberMe&quot;:true,&quot;rememberMe&quot;:true,&quot;username&quot;:null,&quot;additionalLinks&quot;:null,&quot;clientName&quot;:&quot;sitefinity&quot;,&quot;clientUrl&quot;:null,&quot;clientLogoUrl&quot;:null,&quot;errorMessage&quot;:null,&quot;requestId&quot;:&quot;07d5ea78-a685-44ad-9b10-72fcdc4b9371&quot;,&quot;siteUrl&quot;:&quot;http://iristestsandbox.cloudapp.net/Sitefinity/Authenticate/OpenID/&quot;,&quot;siteName&quot;:&quot;Login&quot;,&quot;currentUser&quot;:&quot;SalesUser@progress.com&quot;,&quot;logoutUrl&quot;:&quot;http://iristestsandbox.cloudapp.net/Sitefinity/Authenticate/OpenID/logout&quot;,&quot;custom&quot;:null}
+    </script>
+    <script src="./Login_files/jquery-1.11.0.min.js.download"></script>
+<script src="./Login_files/bootstrap.min.js.download"></script>
+<script src="./Login_files/angular.1.6.6.min.js.download"></script>
+<script src="./Login_files/encoder.min.js.download"></script>
+<script src="./Login_files/app.js.download"></script>
+<script src="./Login_files/webfont.js.download"></script>
+<script src="./Login_files/webfont-loader-bottom.js.download"></script>
+
+
+
+</body></html>

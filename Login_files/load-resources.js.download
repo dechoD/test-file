@@ -1,0 +1,41 @@
+﻿(function () {
+    var resourcesUrls = [
+        "https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700",
+	    "https://fonts.googleapis.com/css?family=Open+Sans:300,400,700",
+        "https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css",
+        "https://netdna.bootstrapcdn.com/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0"
+    ];
+
+    for (var i = 0; i < resourcesUrls.length; i++) {
+        try {
+            if (resourcesUrls[i].indexOf("google") > -1) {
+                getResources(resourcesUrls[i], true);
+            } else {
+                getResources(resourcesUrls[i]);
+            }
+        } catch (error) { }
+    }
+
+    function getResources(url, isReturning) {
+        var isReturning = isReturning || false;
+
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open("GET", url, true);
+        xmlHttp.onload = function (e) {
+            if (isReturning && xmlHttp.readyState === 4) {
+                loadAdditionalResources(xmlHttp.responseText);
+            }
+        };
+        xmlHttp.send(null);
+    }
+
+    function loadAdditionalResources(string) {
+        var urlRegex = new RegExp(/[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi);
+
+        var fonts = string.match(urlRegex);
+
+        for (var i = 0; i < fonts.length; i++) {
+            getResources(fonts[i]);
+        }
+    }
+}());
